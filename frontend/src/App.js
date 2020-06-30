@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Switch, Route,withRouter,Redirect } from 'react-router-dom'
+
+
+import Landing from './component/Landing/Landing'
 import './App.css';
+
+import * as routes from './constants/routes'
 
 class App extends Component {
 state = {
@@ -9,23 +14,10 @@ state = {
 }
 render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+    <Route exact path={routes.HOME} render={() => <Landing/>}/>
       </div>
     );
   }
 }
-export default App;
+export default withRouter(App);
