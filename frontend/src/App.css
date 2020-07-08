@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.bar{
+  margin-top: 4rem;
+  margin-left: 16rem;
+  margin-right: 16rem;
+}
+

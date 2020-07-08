@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import { NavLink } from 'react-router-dom'
-import { Menu, Button } from 'semantic-ui-react'
+import { Menu, Button, Dropdown } from 'semantic-ui-react'
 
 import * as routes from '../../constants/routes'
+import './TopBar.css'
 
 class TopBar extends Component {
     state = { 
@@ -15,7 +16,8 @@ class TopBar extends Component {
       const { activeItem } = this.state
   
       return (
-        <Menu inverted>
+        <div >
+        <Menu inverted borderless className="out">
           <Menu.Item
             name='home'
             active={activeItem === 'home'}
@@ -26,12 +28,13 @@ class TopBar extends Component {
             active={activeItem === 'raffles'}
             onClick={this.handleItemClick}
           />
-          <Menu.Item
+          <Menu.Item position='right'
             name='account'
             active={activeItem === 'account'}
             onClick={this.handleItemClick}
           />
         </Menu>
+        </div>
       )
     }
   }
