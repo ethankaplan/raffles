@@ -29,8 +29,13 @@ class TopBar extends Component {
             onClick={this.handleItemClick}
           />
           <Menu.Item position='right'
-            name='account'
-            active={activeItem === 'account'}
+            name='Register'
+            active={activeItem === 'register'}
+            onClick={this.handleItemClick}
+          />
+          <Menu.Item 
+            name='Log In'
+            active={activeItem === 'login'}
             onClick={this.handleItemClick}
           />
         </Menu>
