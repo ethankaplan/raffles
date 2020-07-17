@@ -4,7 +4,7 @@ import { Switch, Route,withRouter,Redirect } from 'react-router-dom'
 
 import Landing from './component/Landing/Landing'
 import TopBar from './component/TopBar/TopBar'
-import Enter from './component/Login/Enter'
+import Enter from './component/Enter/Enter'
 
 import './App.css';
 
