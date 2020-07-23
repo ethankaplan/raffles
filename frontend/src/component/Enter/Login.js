@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
-import {Grid, GridColumn,Container} from 'semantic-ui-react'
+import {Grid, Container} from 'semantic-ui-react'
 
 class Login extends Component {
     state = {

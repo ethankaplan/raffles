@@ -21,8 +21,9 @@ render(){
         
         <div class="bar"><TopBar currentUser={this.state.currentUser}/></div><br/>
         <Switch>
-        <Route exact path={routes.HOME} render={() => <Landing/>}/>
-        <Route exact path={routes.LOGIN} render={() => <Enter/>}/>
+        <Route exact path={routes.HOME} render={() => <Landing />}/>
+        <Route exact path={routes.LOGIN} render={() => <Enter activeItem='Log In'/>}/>
+        <Route exact path={routes.REGISTER} render={() => <Enter activeItem='Register'/>}/>
         </Switch>
       </div>
     );

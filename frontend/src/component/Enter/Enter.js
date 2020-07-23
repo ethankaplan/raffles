@@ -7,10 +7,22 @@ import Login from './Login'
 import Register from './Register'
 
 class Enter extends Component{
-    state = { activeItem: 'Register' }
+    state = { activeItem: '' }
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
   
+    componentDidMount(){
+      this.setState({
+        activeItem:this.props.activeItem
+      })
+    }
+    componentDidUpdate(prevProps){
+      if(this.props.activeItem!=prevProps.activeItem){
+        this.setState({
+          activeItem:this.props.activeItem
+        })
+      }
+    }
     render() {
       const { activeItem } = this.state
   

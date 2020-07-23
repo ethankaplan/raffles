@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
-import {Grid, Image, Container} from 'semantic-ui-react'
+import {Grid, Container} from 'semantic-ui-react'
 
 class Register extends Component {
   state = {
     username: '',
     password: '',
+    password2:'',
+    email:'',
     logged: false,
     message:''
   }
@@ -19,6 +21,7 @@ class Register extends Component {
   onSubmit = async (e) => {
     e.preventDefault();
     console.log("here")
+
     const registerResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/users/new`, {
         method: 'POST',
         credentials: 'include',
@@ -49,7 +52,7 @@ class Register extends Component {
 }
 */
   render() {
-    const {username, password} = this.state
+    const {username, password, email} = this.state
     
     return(
       <Container textAlign='center' style={{ margin: '1em 0em 0em', padding: '1em 0em' }}>
@@ -64,6 +67,7 @@ class Register extends Component {
                 onSubmit={this.onSubmit}
                 username={username}
                 password={password}
+                email={email}
               /></div>
         }
       </Container>
@@ -72,7 +76,7 @@ class Register extends Component {
   }
 }
 
-const RegisterForm = ({changeHandler, onSubmit, username, password}) =>
+const RegisterForm = ({changeHandler, onSubmit, username, password,email}) =>
 <form onSubmit={onSubmit}>
           <Grid  >
           <Grid.Row columns={2} >
@@ -82,10 +86,25 @@ const RegisterForm = ({changeHandler, onSubmit, username, password}) =>
               <Grid.Column textAlign='left'>
                 <input type="text" name="username" value={username} onChange={changeHandler} />
             </Grid.Column>
+            <Grid.Row columns={2} >
+            <Grid.Column textAlign='right' >
+              Username: 
+              </Grid.Column>
+              <Grid.Column textAlign='left'>
+                <input type="text" name="email" value={email} onChange={changeHandler} />
+            </Grid.Column>
+            </Grid.Row>
             </Grid.Row><Grid.Row columns={2}>
             <Grid.Column textAlign='right'>
                 Password: </Grid.Column> <Grid.Column textAlign='left'>
                 <input type="password" name="password" value={password} onChange={changeHandler} />
+                
+            </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columns={2}>
+            <Grid.Column textAlign='right'>
+                Password Again: </Grid.Column> <Grid.Column textAlign='left'>
+                <input type="password" name="password2" onChange={changeHandler} />
                 
             </Grid.Column>
             </Grid.Row>

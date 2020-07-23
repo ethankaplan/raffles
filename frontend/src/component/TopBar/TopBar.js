@@ -32,12 +32,12 @@ class TopBar extends Component {
             name='Register'
             active={activeItem === 'register'}
             onClick={this.handleItemClick}
-          />
+          ><NavLink to={'/register'} activeClassName="selected">Register</NavLink></Menu.Item>
           <Menu.Item 
             name='Log In'
             active={activeItem === 'login'}
             onClick={this.handleItemClick}
-          />
+          ><NavLink to={'/login'} activeClassName="selected">Login</NavLink></Menu.Item>
         </Menu>
         </div>
       )
