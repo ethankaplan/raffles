@@ -85,15 +85,15 @@ const RegisterForm = ({changeHandler, onSubmit, username, password,email}) =>
               </Grid.Column>
               <Grid.Column textAlign='left'>
                 <input type="text" name="username" value={username} onChange={changeHandler} />
-            </Grid.Column>
+            </Grid.Column></Grid.Row>
             <Grid.Row columns={2} >
             <Grid.Column textAlign='right' >
-              Username: 
+              Email: 
               </Grid.Column>
               <Grid.Column textAlign='left'>
                 <input type="text" name="email" value={email} onChange={changeHandler} />
             </Grid.Column>
-            </Grid.Row>
+            
             </Grid.Row><Grid.Row columns={2}>
             <Grid.Column textAlign='right'>
                 Password: </Grid.Column> <Grid.Column textAlign='left'>

@@ -7,7 +7,7 @@ import './TopBar.css'
 
 class TopBar extends Component {
     state = { 
-        activeItem: 'home' 
+        activeItem: '' 
     }
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -22,7 +22,7 @@ class TopBar extends Component {
             name='home'
             active={activeItem === 'home'}
             onClick={this.handleItemClick}
-          />
+          ><NavLink exact to={routes.HOME} activeClassName="selected">Home</NavLink></Menu.Item>
           <Menu.Item
             name='raffles'
             active={activeItem === 'raffles'}
